@@ -11,12 +11,13 @@ public:
     void undoMovement();
     Rectangle getCollsionRec();
     virtual void tick(float deltaTime);  
+    // pure virtual class are not defined in parent they are only defined in child and are market pure virtual by = 0
+    virtual Vector2 getScreenPos() = 0;
 
 protected:
     Texture2D texture{LoadTexture("characters/knight_idle_spritesheet.png")};
     Texture2D idle{LoadTexture("characters/knight_idle_spritesheet.png")};
     Texture2D run{LoadTexture("characters/knight_run_spritesheet.png")};
-    Vector2 screenPos{};
     Vector2 worldPos{};
     Vector2 worldPosLastFrame{};
     // 1: facing right, -1: facing left
@@ -30,6 +31,7 @@ protected:
     float width{};
     float height{};
     float scale{4.f};
+    Vector2 velocity{};
 
 private:
 
