@@ -14,8 +14,18 @@ Enemy::Enemy(Vector2 pos, Texture2D idle_texture, Texture2D run_texture)
 
 void Enemy::tick(float deltaTime)
 { 
-    Vector2 velocity = Vector2Subtract(target->getScreenPos(), getScreenPos());
+    if (!getAlive()) return;
+
+    velocity = Vector2Subtract(target->getScreenPos(), getScreenPos());
+    if (Vector2Length(velocity) < radius) velocity = {};
+    
     BaseCharacter::tick(deltaTime);
+
+    bool collision = CheckCollisionRecs(target->getCollsionRec(), getCollsionRec());
+    if (collision)
+    {
+        target -> takeDamage(damagePerSec * deltaTime);
+    }
 }
 
 Vector2 Enemy::getScreenPos()

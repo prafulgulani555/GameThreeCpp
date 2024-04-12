@@ -5,4 +5,4 @@
 - Map for this game was created using Tiled
 - Resources from [itch.io](https://itch.io/game-assets/free) were used in making of this game. 
 - [RPG Nature Tileset](https://stealthix.itch.io/rpg-nature-tileset?download) is used in this game which is available on [itch.io](https://itch.io/game-assets/free).
-- This is a Top Down Game.
+- This is a Top Down Game. In this game the player has to kill enemies with sword.
